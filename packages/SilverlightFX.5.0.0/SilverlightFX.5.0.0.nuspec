@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>SilverlightFX</id>
+    <version>5.0.0</version>
+    <authors>Nikhil Kothari,  Chui Tey</authors>
+    <owners>Nikhil Kothari,  Chui Tey</owners>
+    <licenseUrl>https://raw.github.com/teyc/silverlightfx/master/License.txt</licenseUrl>
+    <projectUrl>http://github.com/teyc/silverlightfx</projectUrl>
+    <iconUrl>https://raw.github.com/teyc/silverlightfx/master/samples/EffectsSample/SilverlightT.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Silverlight.FX is an application framework for building Rich Internet Applications based on Silverlight 5.</description>
+    <releaseNotes>This is a maintenance release, with dependencies updated to Silverlight 5</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>Silverlight</tags>
+  </metadata>
+</package>

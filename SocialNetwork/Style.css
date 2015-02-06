@@ -1,0 +1,362 @@
+﻿
+body{
+    background-color:#1e1e1e !important;
+    text-align:center;
+    font-family:'2  Yekan' !important;
+}
+input {
+      font-family: '2  Yekan';                
+  }
+
+li{
+    direction:rtl;
+}
+a{
+    outline:none !important;
+    text-decoration:none !important;
+}
+
+.flip {
+  display: normal;
+}
+.front, .back{
+    background-color:white;
+    height:30%;
+    width:50%;
+    backface-visibility:hidden;
+}
+#Header{
+    padding-top:1%;
+    width:100%;
+    text-align:left;
+    height:50px;
+	left:0px;
+    top:0px;
+	position:fixed;
+    background-color:black;
+    border-top:2px solid #c9e802;
+    border-bottom:2px solid #1e1e1e;
+}
+
+
+.scrollTo_top, .scrollToTopLink {
+    bottom: -4px;
+    opacity: 1;
+    position: fixed;
+  bottom:19px;
+    left: 46px;
+    z-index: 99;
+    background-color:red;
+    width:50px;
+    height:50px;
+    border-radius:40px;
+}
+
+
+.LeftPartOfHeader{
+    float:left;
+    margin-left:4%;
+}
+
+.RightPartOfHeader{
+    float:right;
+    margin-right:4%;
+}
+
+#SubHeader{
+    padding:2px 0px 2px 0px;
+    text-align:left;
+    margin-top:5%;
+    width:100%;
+	overflow:auto;
+	background-color:#ffffff;
+    color:#000000;
+    border-bottom:2px solid #c9e802;
+    font-size:80%;
+}
+
+.ImgButtons{
+    opacity:0.6;
+    margin-right:4px;
+}
+
+.ImgButtons:hover{
+    opacity:1;
+}
+
+.Buttons{
+    opacity:0.6;
+    text-decoration:none;
+    font-size:70%;
+    color:#ffffff;
+}
+
+.Buttons:hover{
+    opacity:1;
+}
+
+
+
+.SubmitButtons{
+    opacity:0.8;
+    text-decoration:none;
+    font-size:80%;
+    background-color:#c9e802;
+    color:#ffffff;
+    border-radius:20px 30px;
+    padding:2px 4px 2px 4px;
+    float: left;
+    position: relative;
+    left: 25%;
+            width: 45%;
+    height: 30%;
+    margin-top: 10%;
+}
+#ContentPlaceHolder1_FileUpload1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+}
+.SubmitButtons:hover, .SubmitButtons:active{
+    opacity:1;
+    text-decoration:none;    
+    outline:none;
+}
+
+#ColL{
+    float:left;
+    margin-left:4%;
+    width:21%;
+    margin-top: 22px;
+}
+
+#ColR{
+    margin-top: 22px;
+    float:right;
+    width:21%;
+    margin-right:4%;
+}
+
+#Posts,#ShowInfo{
+    width:48%;
+    float:left;
+    margin-left:1%;
+    margin-right:1%;
+    margin-top:22px;
+}
+
+#Search,#FriendSuggestion,#GroupSuggestion,#FriendsList,#GroupsList,#Posts,#ShowInfo,#TabOfProfile{
+    background-color:#ffffff;
+    text-align:right;
+}
+
+.RightColTable{
+    width:100%;
+    text-align:right;
+}
+
+.FriendsMemberR{
+    background-color:#d0d0d0;
+    opacity:0.5;
+}
+
+.FriendsMemberH{
+    text-align:center;
+    width:34px;
+    border-left:5px solid #a0a0a0;
+}
+
+.FriendsMemberH2{
+    text-align:center;
+    width:20px;
+}
+
+.FriendsMemberD{
+    font-size:80%;
+}
+
+.FriendsMemberR:hover{
+    opacity:0.9;
+}
+
+#Footer{
+    background-color:#000000;
+	clear:both;
+    overflow:auto;
+	bottom:0%;
+    text-align:right;
+    color:#ffffff;
+    padding:2px 2px 2px 2px;
+    margin:7px 7px 2px 2px;
+}
+
+.FooterContent{
+    text-align:right;
+    float:right;
+    width:30%;
+    margin-left:3%;
+}
+
+#Col3{
+    overflow:no-display;
+}
+
+#Col6{
+    text-align:left;
+}
+
+#Col5{
+    text-align:center;
+}
+
+#ImgPhoneNumberFooter{
+    width:12px;
+    height:12px;
+}
+
+#BottomContentOfFooter,#TopContentOfFooter,#CenterContentOfFooter{
+    clear:both;
+    margin-right:50px;
+}
+
+.FooterList{
+    display:list-item;
+    text-align:right;
+    grid-row-align:start;
+    margin-right:4px;
+    color:#bfbfbf;
+}
+
+/************************************************
+    ************************************************
+    ************************************************
+    ************************************************
+    */
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+	/*  UPDATED! flip the pane when hovered */
+	
+
+.flip-container, .front, .back {
+		width: 320px;
+	height: 390px;
+      position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:4%;
+    margin-bottom: 6%;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*  UPDATED! front pane, placed above back */
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(-180deg);
+}
+
+/* 
+	Some vertical flip updates 
+*/
+.vertical.flip-container {
+	position: relative;
+}
+	.vertical .back {
+		transform: rotateX(180deg);
+	}
+
+	.vertical.flip-container:hover .back {
+	    transform: rotateX(0deg);
+	}
+
+	.vertical.flip-container:hover .front {
+	    transform: rotateX(180deg);
+	}
+
+.flip-container.flip .flipper .front {
+	transform: rotateY(180deg);
+}
+	/*  UPDATED! flip the pane when hovered */
+	.flip-container.flip .flipper .back {
+		transform: rotateY(0deg);
+	}
+
+
+
+/*
+    ********************************
+    */
+
+h6{
+    margin-top:0px !important;
+}
+
+#login{
+    position:relative;
+    margin-top:35%;
+    padding-right: 11%;
+    
+    left:20%;
+}
+
+#register{
+    position:relative;
+    margin-top: 16%;
+    left:19%;
+    padding-right: 6%;
+    padding-top: 5%;
+}
+
+.flipping{
+    background-color: cadetblue;
+    margin-top:1%;
+}
+
+headroom--top {
+    margin-top:0px;
+    position:fixed;
+}
+headroom--not-top {
+    margin-top:0px; 
+    position:fixed;
+}
+.pinned{
+	-webkit-transform:translateY(0);
+	-ms-transform:translateY(0);
+	transform:translateY(0)
+}
+
+.unpinned{
+	-webkit-transform:translateY(-100%);
+	-ms-transform:translateY(-100%);
+	transform:translateY(-100%)
+}
+
+a:hover, a:active, a:focus {
+  outline: 0;
+}
