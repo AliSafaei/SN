@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class Home
 
     '''<summary>
+    '''alert control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents alert As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
     '''EmailL control.
     '''</summary>
     '''<remarks>

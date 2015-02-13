@@ -19,8 +19,8 @@
 <body>
     <form id="form1" runat="server">
 
-        <div id="Header">
-            <div class="LeftPartOfHeader">
+        <div <%--id="Header"--%>>
+            <%--<div class="LeftPartOfHeader">
                 <asp:ImageButton ID="ImgLogo" CssClass="ImgButtons" src="../ImgLogo.png" Width="100px" Height="20px" runat="server" />
                 <asp:ImageButton ID="ImgMessage" CssClass="ImgButtons" src="../ImgMessage.png" Width="20px" Height="20px" runat="server" />
                 <asp:ImageButton ID="ImgFriend" CssClass="ImgButtons" src="../ImgFriend.png" Width="20px" Height="20px" runat="server" />
@@ -29,11 +29,17 @@
                 <asp:LinkButton ID="UserName" CssClass="Buttons" runat="server">
                     <asp:Literal ID="_Name" runat="server"></asp:Literal></asp:LinkButton>
                 <asp:ImageButton ID="ImgMore" CssClass="ImgButtons" src="../ImgMore.png" Width="20px" Height="20px" runat="server" />
-            </div>
+            </div>--%>
         </div>
         
 
-        <div>
+        <div style="background: none repeat 0 0;
+overflow:hidden;
+    height: 100vh;
+    min-height: 350px;
+    position: relative;
+    text-align: center;
+    width: 100%;">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 
@@ -41,7 +47,7 @@
         </div>
     </form>
 
-    <div id="Footer">
+    <div id="Footer" class="nav nabar navbar-inverse">
         <div id="TopContentOfFooter">
             <div id="Col1" class="FooterContent">
                 <h3>ارتباط بیشتر</h3>

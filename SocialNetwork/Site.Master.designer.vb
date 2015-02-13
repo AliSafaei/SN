@@ -32,60 +32,6 @@ Partial Public Class SiteMaster
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''ImgLogo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ImgLogo As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
-    '''ImgMessage control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ImgMessage As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
-    '''ImgFriend control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ImgFriend As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
-    '''UserName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents UserName As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''_Name control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents _Name As Global.System.Web.UI.WebControls.Literal
-
-    '''<summary>
-    '''ImgMore control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ImgMore As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
     '''ContentPlaceHolder1 control.
     '''</summary>
     '''<remarks>

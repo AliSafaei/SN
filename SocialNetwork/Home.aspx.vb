@@ -11,6 +11,13 @@ Public Class Home
     End Sub
 
     Protected Sub EnterButton_Click(sender As Object, e As EventArgs) Handles EnterButton.ServerClick
+
+        If Not (Me.ViewState("Result") Is Nothing) Then
+            alert.Text = " <div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Warning!</strong></div>"
+
+            Me.ViewState.Remove("Result")
+        End If
+
         Try
             Dim queryResult As String
             CNN = New SqlConnection(ConfigurationManager.ConnectionStrings("DBConnection").ConnectionString)
@@ -27,12 +34,16 @@ Public Class Home
                     FormsAuthentication.RedirectFromLoginPage(EmailL.Text, True)
                     Response.Redirect("Main.aspx", False)
                 Else
+                    Me.ViewState.Add("Result", "!رمز عبور درست نیست")
                     Response.Redirect("Home.aspx", False)
                 End If
             Else
+                Me.ViewState.Add("Result", "!کاربر موجود نیست")
                 Response.Redirect("Home.aspx", False)
             End If
         Catch ex As Exception
+            Me.ViewState.Add("Result", "!لطفا مجددا تلاش کنید")
+            '(Session.Add("Result", ))
             Response.Redirect("Home.aspx", False)
             Exit Try
         End Try

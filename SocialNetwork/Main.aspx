@@ -147,7 +147,7 @@
             </ItemTemplate>
         </asp:Repeater>
 
-        <a id="me" href="#" onclick="ShowMore(5)" class="SubmitButtons">بیشتر</a>
+        <a id="me" href="#me" onclick="ShowMore(5)" class="SubmitButtons">بیشتر</a>
     </div> 
     
                       
@@ -201,22 +201,5 @@
     </div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="inPageScripts" runat="server">
-    <script type="text/javascript">
-        (function () {
-            var converter1 = Markdown.getSanitizingConverter();
-            var editor1 = new Markdown.Editor(converter1);
-            editor1.run();
-
-
-        })();
-
-
-        function SetHidden() {
-            var hidden = document.getElementById('ContentPlaceHolder1_PostTextBox');
-            var textArea = document.getElementById('wmd-input');
-            var converter1 = Markdown.getSanitizingConverter();
-            hidden.value = converter1.makeHtml(textArea.value);
-            return true;
-        }
-    </script>
+    
 </asp:Content>

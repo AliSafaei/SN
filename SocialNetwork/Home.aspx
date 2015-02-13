@@ -7,9 +7,9 @@
         {
             $("#hey").toggleClass("flip");
         }
-
         
     </script>
+        
     <style type="text/css">
         .auto-style1 {
             text-align: center;
@@ -21,12 +21,13 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+   
+     <asp:Literal ID="alert" runat="server"></asp:Literal>
     <div id="hey" class="flip-container">
         <div class="flipper">
             <div class="front">
                 <h6 style="background-color: #000000; color: #ffffff;">ورود</h6>
-                    <table id="login" cellspacing="5">
+                    <table id="login">
                         <tr>
                             <td>
                                 <asp:TextBox ID="EmailL" runat="server"></asp:TextBox>
@@ -56,7 +57,7 @@
             </div>
             <div class="back">
                     <h6 style="background-color: #000000; color: #ffffff;">ثبت نام</h6>
-                    <table id="register" cellspacing="7">
+                    <table id="register">
                         <tr>
                             <td>
                                 <asp:TextBox ID="Name" runat="server"></asp:TextBox>
