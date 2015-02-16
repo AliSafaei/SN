@@ -207,14 +207,14 @@ Public Class Main1
                 If Result.GetValue(2).ToString() = "" Then
                     NL.Image = ""
                 Else
-                    NL.Image = "Images/PostImages/" + Result.GetValue(2)
+                    NL.Image = "Images\/PostImages\/" + Result.GetValue(2)
                 End If
 
                 NL.Body = Result.GetValue(1)
                 NL.User = Result.GetValue(3).ToString()
 
-                If FileIO.FileSystem.FileExists("Images/ProfileImages/T" + Result.GetValue(3).ToString() + ".jpg") Then
-                    NL.UserImage = "Images/ProfileImages/T" + Result.GetValue(3).ToString() + ".jpg"
+                If FileIO.FileSystem.FileExists("Images\/ProfileImages\/T" + Result.GetValue(3).ToString() + ".jpg") Then
+                    NL.UserImage = "Images\/ProfileImages\/T" + Result.GetValue(3).ToString() + ".jpg"
                 Else
                     NL.UserImage = ""
                 End If
@@ -293,7 +293,7 @@ Public Class Main1
                 If FileUpload1.HasFiles() Then
                     QueryCmpl1 = ",image"
                     QueryCmpl2 = ",'" + Server.HtmlEncode(FileUpload1.FileName) + "'"
-                    FileUpload1.SaveAs(Request.PhysicalApplicationPath + "Images\PostImages\" + Server.HtmlEncode(FileUpload1.FileName))
+                    FileUpload1.SaveAs(Request.PhysicalApplicationPath + "Images\/PostImages\/" + Server.HtmlEncode(FileUpload1.FileName))
                 End If
 
                 'todo: if save succesfull : if file was only image

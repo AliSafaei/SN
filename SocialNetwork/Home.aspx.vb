@@ -12,11 +12,11 @@ Public Class Home
 
     Protected Sub EnterButton_Click(sender As Object, e As EventArgs) Handles EnterButton.ServerClick
 
-        If Not (Me.ViewState("Result") Is Nothing) Then
-            alert.Text = " <div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Warning!</strong></div>"
+        'If Not (Me.ViewState("Result") Is Nothing) Then
+        '    alert.Text = " <div class='alert alert-danger'><a href='#' class='close' data-dismiss='alert'>&times;</a><strong>Warning!</strong></div>"
 
-            Me.ViewState.Remove("Result")
-        End If
+        '    Me.ViewState.Remove("Result")
+        'End If
 
         Try
             Dim queryResult As String
@@ -32,19 +32,19 @@ Public Class Home
                 If PasswordL.Text = queryResult Then
                     'create user session.
                     FormsAuthentication.RedirectFromLoginPage(EmailL.Text, True)
-                    Response.Redirect("Main.aspx", False)
+                    'Response.Redirect("Main.aspx", True)
                 Else
-                    Me.ViewState.Add("Result", "!رمز عبور درست نیست")
-                    Response.Redirect("Home.aspx", False)
+                    'Me.ViewState.Add("Result", "!رمز عبور درست نیست")
+                    Response.Redirect("Home.aspx", True)
                 End If
             Else
-                Me.ViewState.Add("Result", "!کاربر موجود نیست")
-                Response.Redirect("Home.aspx", False)
+                'Me.ViewState.Add("Result", "!کاربر موجود نیست")
+                Response.Redirect("Home.aspx", True)
             End If
         Catch ex As Exception
-            Me.ViewState.Add("Result", "!لطفا مجددا تلاش کنید")
+            'Me.ViewState.Add("Result", "!لطفا مجددا تلاش کنید")
             '(Session.Add("Result", ))
-            Response.Redirect("Home.aspx", False)
+            Response.Redirect("Home.aspx", True)
             Exit Try
         End Try
 

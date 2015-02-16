@@ -200,7 +200,7 @@ Partial Public Class EditMyProfile
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents FileUpload As Global.AjaxControlToolkit.AjaxFileUpload
+    Protected WithEvents FileUpload As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
     '''ImageButton1 control.

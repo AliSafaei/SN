@@ -241,7 +241,8 @@
                              </tr>
                              <tr>
                                  <td  colspan="2">
-                                     <ajaxToolkit:AjaxFileUpload runat="server" ID="FileUpload" MaximumNumberOfFiles="1" AllowedFileTypes="JPG, JPEG" Mode="Client" />
+                                     <%--<ajaxToolkit:AjaxFileUpload runat="server" ID="FileUpload" MaximumNumberOfFiles="1" AllowedFileTypes="JPG, JPEG" Mode="Client" />--%>
+                                     <asp:FileUpload ID="FileUpload" runat="server" AllowMultiple="false" />
                                  </td>
                              </tr>
                          </tbody>

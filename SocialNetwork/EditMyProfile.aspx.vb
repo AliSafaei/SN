@@ -129,6 +129,38 @@ Public Class EditMyProfile
             CMD.ExecuteScalar()
             CNN.Close()
 
+
+            If FileUpload.HasFile Then
+                Dim fileExt As String = System.IO.Path.GetExtension(FileUpload.FileName)
+                If fileExt = ".jpg" Or fileExt = ".png" Or fileExt = ".jpeg" Then
+                    Dim Path As String = "~/\Images/\ProfileImages/\" + User.Identity.Name
+
+                    If System.IO.File.Exists(Path + ".jpg") Then
+                        System.IO.File.Delete(Path + ".jpg")
+                        Path = "Images/\ProfileImages/\T" + User.Identity.Name
+                        System.IO.File.Delete(Path + ".jpg")
+                    End If
+                    If System.IO.File.Exists(Path + ".png") Then
+                        System.IO.File.Delete(Path + ".png")
+                        Path = "Images/\ProfileImages/\T" + User.Identity.Name
+                        System.IO.File.Delete(Path + ".png")
+
+                    End If
+                    If System.IO.File.Exists(Path + ".jpeg") Then
+                        System.IO.File.Delete(Path + ".jpeg")
+                        Path = "Images\ProfileImages\T" + User.Identity.Name
+                        System.IO.File.Delete(Path + ".jpeg")
+                    End If
+                    Path = "Images\ProfileImages\" + User.Identity.Name + fileExt
+                    FileUpload.SaveAs(MapPath(Path))
+
+                    Dim BM As Bitmap = System.Drawing.Image.FromFile(MapPath(Path))
+                    Path = "Images\ProfileImages\T" + User.Identity.Name + fileExt
+                    'ThumbNail Size: 50,50
+                    Dim Thumbnail As Image = BM.GetThumbnailImage(200, 200, New GetThumbnailImageAbort(AddressOf CallBa), IntPtr.Zero)
+                    Thumbnail.Save(MapPath(Path))
+                End If
+            End If
             Session.Remove("Change")
             Response.Redirect("MyProfile.aspx")
 
@@ -138,20 +170,20 @@ Public Class EditMyProfile
 
     End Sub
 
-    Protected Sub FileUpload_UploadComplete(sender As Object, e As AjaxControlToolkit.AjaxFileUploadEventArgs) Handles FileUpload.UploadComplete
+    'Protected Sub FileUpload_UploadComplete(sender As Object, e As AjaxControlToolkit.AjaxFileUploadEventArgs) Handles FileUpload.UploadComplete
 
-            'todo: only allows jpeg files for profile pictures.
-            Dim Path As String = "Images\ProfileImages\" + User.Identity.Name + e.ContentType
-            FileUpload.SaveAs(MapPath(Path))
+    '        'todo: only allows jpeg files for profile pictures.
+    '    Dim Path As String = "Images\/ProfileImages\/" + User.Identity.Name + e.ContentType
+    '        FileUpload.SaveAs(MapPath(Path))
 
-            Dim BM As Bitmap = System.Drawing.Image.FromFile(MapPath(Path))
-            Path = "Images\ProfileImages\T" + User.Identity.Name + e.ContentType
-            'ThumbNail Size: 50,50
-        Dim Thumbnail As Image = BM.GetThumbnailImage(200, 200, New GetThumbnailImageAbort(AddressOf CallBa), IntPtr.Zero)
-            Thumbnail.Save(MapPath(Path))
+    '        Dim BM As Bitmap = System.Drawing.Image.FromFile(MapPath(Path))
+    '    Path = "Images\/ProfileImages\/T" + User.Identity.Name + e.ContentType
+    '        'ThumbNail Size: 50,50
+    '    Dim Thumbnail As Image = BM.GetThumbnailImage(200, 200, New GetThumbnailImageAbort(AddressOf CallBa), IntPtr.Zero)
+    '        Thumbnail.Save(MapPath(Path))
 
 
-    End Sub
+    'End Sub
 
     Public Function CallBa as Boolean
         Return False
