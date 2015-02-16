@@ -133,23 +133,24 @@ Public Class EditMyProfile
             If FileUpload.HasFile Then
                 Dim fileExt As String = System.IO.Path.GetExtension(FileUpload.FileName)
                 If fileExt = ".jpg" Or fileExt = ".png" Or fileExt = ".jpeg" Then
-                    Dim Path As String = "~/\Images/\ProfileImages/\" + User.Identity.Name
+                    Dim Path As String = "Images\ProfileImages\" + User.Identity.Name
 
-                    If System.IO.File.Exists(Path + ".jpg") Then
-                        System.IO.File.Delete(Path + ".jpg")
-                        Path = "Images/\ProfileImages/\T" + User.Identity.Name
-                        System.IO.File.Delete(Path + ".jpg")
-                    End If
-                    If System.IO.File.Exists(Path + ".png") Then
-                        System.IO.File.Delete(Path + ".png")
-                        Path = "Images/\ProfileImages/\T" + User.Identity.Name
-                        System.IO.File.Delete(Path + ".png")
+                    If System.IO.File.Exists(MapPath(Path + ".jpg")) Then
+                        System.IO.File.Delete(MapPath(Path + ".jpg"))
 
-                    End If
-                    If System.IO.File.Exists(Path + ".jpeg") Then
-                        System.IO.File.Delete(Path + ".jpeg")
                         Path = "Images\ProfileImages\T" + User.Identity.Name
-                        System.IO.File.Delete(Path + ".jpeg")
+                        System.IO.File.Delete(MapPath(Path + ".jpg"))
+                    End If
+                    If System.IO.File.Exists(MapPath(Path + ".png")) Then
+                        System.IO.File.Delete(MapPath(Path + ".png"))
+                        Path = "Images\ProfileImages\T" + User.Identity.Name
+                        System.IO.File.Delete(MapPath(Path + ".png"))
+
+                    End If
+                    If System.IO.File.Exists(MapPath(Path + ".jpeg")) Then
+                        System.IO.File.Delete(MapPath(Path + ".jpeg"))
+                        Path = "Images\ProfileImages\T" + User.Identity.Name
+                        System.IO.File.Delete(MapPath(Path + ".jpeg"))
                     End If
                     Path = "Images\ProfileImages\" + User.Identity.Name + fileExt
                     FileUpload.SaveAs(MapPath(Path))
@@ -159,6 +160,9 @@ Public Class EditMyProfile
                     'ThumbNail Size: 50,50
                     Dim Thumbnail As Image = BM.GetThumbnailImage(200, 200, New GetThumbnailImageAbort(AddressOf CallBa), IntPtr.Zero)
                     Thumbnail.Save(MapPath(Path))
+                Else
+                    'delete the file.. or reject the process
+                    'notify the user that she can only use the jpeg, and png files for her profile image.
                 End If
             End If
             Session.Remove("Change")

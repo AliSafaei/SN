@@ -54,8 +54,18 @@ Public Class Main
 
             If Context.Request.QueryString("id") Is Nothing Then
                 Try
-                    If Not (FileLen(Request.PhysicalApplicationPath + "Images\ProfileImages\T" + Context.User.Identity.Name + ".jpg") = 0) Then
+                    If System.IO.File.Exists(MapPath("Images\ProfileImages\T" + Context.User.Identity.Name + ".jpg")) Then
+
                         ImgUserProfile.Attributes.Item("src") = "Images/ProfileImages/T" + Context.User.Identity.Name + ".jpg"
+
+                    ElseIf System.IO.File.Exists(MapPath("Images\ProfileImages\T" + Context.User.Identity.Name + ".jpeg")) Then
+
+                        ImgUserProfile.Attributes.Item("src") = "Images/ProfileImages/T" + Context.User.Identity.Name + ".jpeg"
+
+                    ElseIf System.IO.File.Exists(MapPath("Images\ProfileImages\T" + Context.User.Identity.Name + ".png")) Then
+
+                        ImgUserProfile.Attributes.Item("src") = "Images/ProfileImages/T" + Context.User.Identity.Name + ".png"
+
                     End If
                 Catch ex As System.IO.FileNotFoundException
                     ImgUserProfile.Attributes.Item("src") = "ImgUserPicture.jpg"
